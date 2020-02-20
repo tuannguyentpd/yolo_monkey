@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>YOLO</title>
+
+	<style>
+	.fix_images_size img{
+		border:1px dotted black;
+		display:block;
+		vertical-align:middle;
+		max-width: 500px;
+		max-height:500px;
+	}
+
+	h1 {
+		text-align: center;
+		text-shadow: 5px 5px red;
+		color: blue;
+	}
+
+	.image{
+		background: white;
+		float: center;
+		max-width: 1000px;
+  		padding: 10px;
+  		border: 5px solid gray;
+  		margin: 10px;		
+	}
+
+	.foot{
+		background: #000080;
+		height: 100px;
+		padding: 5px;
+	}
+
+	.info{
+		text-align: center;
+		letter-spacing: 2px;
+		line-height: 1.0;
+		word-spacing: 5px;
+		color: white;	
+	}
+</style>
+</head>
+
+<body style="background-color:#CCFFFF;">
+<center>
+<h2>Nguyen Thanh Tuan - 1612774</h2>
+<h1>YOLO - Object Detection</h1>
+<form id="upload-form" action = "{{ url_for('upload') }}" method = "POST" enctype = "multipart/form-data">
+	<!--<input type = "file" name = "file" accept="image/*" multiple>-->
+	<input type="file" name="file" accept="image/*" onchange="loadFile(event)"> 
+	<input type = "submit" value="Upload Image"/>
+</form>
+</br>
+<div>
+	<!--<img class="image" src="{{ url_for('static', filename='icon.png')}}" class="fix_images_size">-->
+	<img class="image" src="{{ url_for('static', filename='icon.png')}}" output id="output"/>
+</div>
+</center>
+
+</br>
+<div class="foot">
+	<p class="info"> Mon hoc: May hoc thong ke </p>
+	<p class="info"> Giao vien: Ngo Minh Nhut </p>
+	<p class="info"> Nam hoc: 2018-2019 </p>
+</div>
+
+</body>
+<script>
+ 	var loadFile = function(event) {
+   	var output = document.getElementById('output');
+   	output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+</html>

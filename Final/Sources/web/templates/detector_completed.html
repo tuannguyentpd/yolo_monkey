@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prediction Completed</title>
+</head>
+<style>
+	.fix_images_size img{
+		border:1px dotted black;
+		display:block;
+		vertical-align:middle;
+		max-width: 500px;
+		max-height:500px;
+		overflow:hidden;
+	}
+
+	h1 {
+		text-align: center;
+		text-shadow: 5px 5px red;
+		color: blue;
+	}
+
+	.result_format{
+		text-align: left;
+		color: black;
+		margin-left: 20px;
+		text-transform: capitalize;
+		word-spacing: 15px
+		line-height: 1.2;
+		font-family: Arial;
+	}
+
+	.box_result{
+		background: white;
+		float: left;
+  		width: 300px;
+  		padding: 10px;
+  		border: 5px solid gray;
+  		margin: 10px;	
+		position: relative;	
+	}
+
+	.box_all{
+		background: #fdf5e6;
+		float: left;
+  		width: 1240px;
+  		padding: 10px;
+  		border: 5px solid gray;
+  		margin: 10px;	
+		position: relative;	
+	}
+
+	.image{
+		background: white;
+		float: right;
+		max-width: 800px;
+  		padding: 10px;
+  		border: 5px solid gray;
+  		margin: 10px;		
+	}
+
+	.foot{
+		background: #000080;
+		height: 100px;
+		padding: 5px;
+	}
+
+	.info{
+		text-align: center;
+		letter-spacing: 2px;
+		line-height: 1.0;
+		word-spacing: 5px;
+		color: white;	
+	}
+</style>
+<body style="background-color:#CCFFFF;">
+<center>
+<h2>Nguyen Thanh Tuan - 1612774</h2>
+<h1>YOLO - Object Detection</h1>
+<form id="completed-form" action = "{{ url_for('completed') }}" method = "GET" enctype = "multipart/form-data">
+	<input type = "submit" value = "Detect New Image"/>
+</form>
+</br></br>
+<div class="box_all">
+	<div class="box_result">
+	<ol>
+		{% for result in results %}
+		<li class="result_format"> {{result[0]}}: {{result[1]}}%</li>
+		{% endfor %}
+	<ol>
+	</div>
+	<img class="image" src="{{ url_for('static', filename=redicted) }}" class="fix_images_size">
+</div>
+</center>
+</br>
+</body>
+
+</html>

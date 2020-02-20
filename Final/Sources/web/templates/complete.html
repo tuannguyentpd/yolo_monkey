@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Upload Completed</title>
+</head>
+<style>
+	.fix_images_size img{
+		border:1px dotted black;
+		display:block;
+		vertical-align:middle;
+		max-width: 500px;
+		max-height:500px;
+		overflow:hidden;
+	}
+</style>
+<body>
+<div>
+Uploaded
+
+<div>
+<img src="{{ url_for('static', filename='temp.jpg')}}" class="fix_images_size">
+</div>
+</body>

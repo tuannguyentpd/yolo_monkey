@@ -1,0 +1,6 @@
+classes= 1
+train  = ../monkey_train.txt
+valid  = ../monkey_test.txt
+names = ../data/monkey.names
+backup = ../backup/
+

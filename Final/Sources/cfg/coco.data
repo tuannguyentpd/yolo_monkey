@@ -1,0 +1,8 @@
+classes= 80
+train  = /home/tuan/Desktop/MayHocThongKe/YOLO/darknet/train.txt
+valid  = /home/tuan/Desktop/MayHocThongKe/YOLO/darknet/test.txt
+#valid = data/coco_val_5k.list
+names = /home/tuan/Desktop/MayHocThongKe/YOLO/darknet/data/coco.names
+backup = backup/
+eval=coco
+
